@@ -1,0 +1,420 @@
+/* ============= IMPORTS & CORES ============= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary: #667eea;
+    --primary-dark: #5568d3;
+    --secondary: #764ba2;
+    --accent: #f093fb;
+    --success: #48bb78;
+    --light: #f7fafc;
+    --dark: #1a202c;
+    --gray: #718096;
+    --gray-light: #edf2f7;
+    
+    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* ============= BODY & BASE ============= */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--dark);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ============= HEADER ============= */
+.header-catalogo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 25px 40px;
+    background: var(--gradient-1);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-catalogo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.btn-voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.btn-voltar:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+}
+
+.btn-voltar img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.btn-voltar:hover img {
+    transform: scale(1.2);
+}
+
+/* ============= MAIN CONTAINER ============= */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* ============= PRODUTO DETALHE ============= */
+.produto-detalhe-container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    margin: 0 auto;
+}
+
+.produto-wrapper {
+    display: flex;
+    gap: 60px;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(102, 126, 234, 0.15);
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+.produto-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradient-1);
+}
+
+/* ============= IMAGEM ============= */
+.imagem-foco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-radius: 16px;
+    padding: 30px;
+    min-height: 400px;
+    min-width: 350px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.imagem-foco::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    opacity: 0.1;
+    top: -50%;
+    right: -50%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.imagem-foco img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.imagem-foco:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(30px); }
+}
+
+/* ============= INFO DETALHADA ============= */
+.info-detalhada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    max-width: 450px;
+    flex: 0 1 450px;
+}
+
+.info-detalhada h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============= PREÇO/HORÁRIO ============= */
+.preco-destaque {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: var(--gradient-2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+/* ============= LISTA DE FEATURES ============= */
+.lista-specs-elevada {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lista-specs-elevada li {
+    padding-left: 30px;
+    position: relative;
+    font-size: 1rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.lista-specs-elevada li::before {
+    content: '-';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.lista-specs-elevada p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+/* ============= BOTÃO ============= */
+.botao-acomprar-grande,
+.botao-comprar-grande {
+    background: var(--gradient-1);
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.botao-acomprar-grande:hover,
+.botao-comprar-grande:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+    background: var(--gradient-2);
+}
+
+.botao-acomprar-grande:active,
+.botao-comprar-grande:active {
+    transform: translateY(-1px);
+}
+
+/* ============= AUDIO STYLING ============= */
+audio {
+    display: none;
+}
+
+/* ============= RESPONSIVIDADE ============= */
+@media (max-width: 1024px) {
+    .produto-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px;
+        flex-direction: column;
+    }
+
+    .imagem-foco {
+        min-width: 100%;
+        min-height: 300px;
+    }
+
+    .info-detalhada h2 {
+        font-size: 2rem;
+    }
+
+    .preco-destaque {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-catalogo {
+        padding: 20px 25px;
+    }
+
+    .header-catalogo h1 {
+        font-size: 1.8rem;
+    }
+
+    .produto-detalhe-container {
+        padding: 20px 10px;
+    }
+
+    .produto-wrapper {
+        padding: 30px 20px;
+        gap: 30px;
+        border-radius: 16px;
+        flex-direction: column;
+    }
+
+    .imagem-foco {
+        min-height: 300px;
+        min-width: 100%;
+        padding: 20px;
+    }
+
+    .imagem-foco img {
+        max-height: 300px;
+    }
+
+    .info-detalhada {
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .info-detalhada h2 {
+        font-size: 1.6rem;
+    }
+
+    .preco-destaque {
+        font-size: 1.2rem;
+    }
+
+    .lista-specs-elevada li {
+        font-size: 0.95rem;
+    }
+
+    .botao-acomprar-grande,
+    .botao-comprar-grande {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-catalogo {
+        padding: 15px 20px;
+        justify-content: center;
+    }
+
+    .btn-voltar {
+        position: absolute;
+        left: 15px;
+        margin-right: 0;
+    }
+
+    .header-catalogo h1 {
+        font-size: 1.4rem;
+    }
+
+    .produto-detalhe-container {
+        padding: 15px 0;
+    }
+
+    .produto-wrapper {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .imagem-foco {
+        min-height: 250px;
+        min-width: 100%;
+        border-radius: 12px;
+        padding: 15px;
+    }
+
+    .imagem-foco img {
+        max-height: 250px;
+    }
+
+    .info-detalhada {
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .info-detalhada h2 {
+        font-size: 1.4rem;
+    }
+
+    .preco-destaque {
+        font-size: 1.1rem;
+    }
+
+    .lista-specs-elevada li {
+        font-size: 0.9rem;
+        padding-left: 25px;
+    }
+
+    .botao-acomprar-grande,
+    .botao-comprar-grande {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
