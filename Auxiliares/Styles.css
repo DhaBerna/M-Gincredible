@@ -348,10 +348,58 @@ body::before {
     bottom: 40px;
     right: 40px;
     background: var(--azul-hotel);
-    color: white;
+    padding: 10px;
     border-radius: 10px;
-    font-size: 0.85rem;
-    line-height: 1.4;
+    
+    /* Configuração de Resize */
+    resize: both;
+    overflow: auto;
+    min-width: 200px;
+    min-height: 200px;
+    
+    /* MAGIA: Espelhar o container */
+    transform: rotate(180deg);
+    direction: rtl; /* Ajusta o fluxo para o resize funcionar nesta orientação */
+}
+
+/* Reverter a rotação do conteúdo para ficar direito */
+.texto-cantodireitomusc iframe {
+    transform: rotate(180deg);
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+.container-mapa {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 400px;
+    height: 350px;
+    background: var(--azul-hotel);
+    border-radius: 10px;
+    padding: 10px;
+    /* Removemos o resize nativo */
+    resize: none; 
+}
+
+.handle-top-left {
+    position: absolute;
+    top: -10px;   /* Move a pega para cima do limite do quadrado */
+    left: -10px;  /* Move a pega para o lado esquerdo do quadrado */
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid var(--azul-hotel); /* Para combinar com o teu design */
+    border-radius: 50%;
+    cursor: nwse-resize; 
+    z-index: 10;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* ============= SIDEBAR - MÚSICA & MAPA ============= */
