@@ -8,6 +8,34 @@ function fecharPopup() {
   document.getElementById("meuPopup").style.display = "none";
 }
 
+const container = document.getElementById('containerMapa');
+const handle = document.getElementById('handle');
+
+handle.addEventListener('mousedown', (e) => {
+    window.addEventListener('mousemove', resize);
+    window.addEventListener('mouseup', stopResize);
+});
+
+function resize(e) {
+    const rect = container.getBoundingClientRect();
+    
+    // Calcula a nova largura baseada na distância entre o rato e o lado DIREITO do container
+    const newWidth = rect.right - e.clientX;
+    // Calcula a nova altura baseada na distância entre o rato e o fundo do container
+    const newHeight = rect.bottom - e.clientY;
+
+    if (newWidth > 150) {
+        container.style.width = newWidth + 'px';
+    }
+    if (newHeight > 150) {
+        container.style.height = newHeight + 'px';
+    }
+}
+
+function stopResize() {
+    window.removeEventListener('mousemove', resize);
+}
+
 // ============= VALIDAÇÃO DE NIF COM FEEDBACK VISUAL =============
 class NIFValidator {
     constructor(inputSelector, buttonSelector) {
