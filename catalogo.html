@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de atividades extraordinárias - Guitarra, Crochet, Games, Rubiks Cube, Bike">
+    <meta name="theme-color" content="#667eea">
+    <title>Catálogo - Meet and Greet Incrível</title>
+    <link rel="stylesheet" href="Auxiliares/Styles.css">
+    <link rel="stylesheet" href="Auxiliares/animations.css">
+    <link rel="stylesheet" href="Auxiliares/main.js">
+
+</head>
+
+
+
+<body>
+
+<header class="header-catalogo">
+    <a href="indexbom.html" class="btn-voltar">
+        <img src="imagens here/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Voltar">
+    </a>
+</header>
+
+
+        <!---------------------------------Ngc do spotify---------------------------------->
+
+
+<div id="meuPopup" class="popup-overlay">
+  <div class="popup-conteudo">
+    <span class="fechar" onclick="fecharPopup()">&times;</span>
+    <img src="imagens here/BOOK.png" width="460px" alt="Imagem do Popup">
+  </div>
+</div>
+
+
+
+    <!---------------------------------Ngc do spotify---------------------------------->
+    <div class="texto-cantodireitomusc">
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/71GYEInX2s1v8FMVW5SYjI?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+
+    <!-----------------------------------Titulo----------------------------->
+
+<div class="header-catalogo">
+    <h1>Meet and Greet Incrivel</h1>
+    <a href="indexbom.html" class="btn-voltar">
+        <img src="imagens here/seta_voltar.png" alt="Voltar">
+    </a>    
+</div>
+
+    <!------------------------------quadrados   ---------------------------------->
+
+    <div class="grid-catalogo">
+        
+        <div class="card-produto">
+            <img src="imagens here/verde_tshirt.jpg " alt="OG Vermelha">
+                <h2>Crochet</h2>
+                <a href="crochet.html" class="botao-comprar">Saber Mais</a>
+        </div>
+
+        <div class="card-produto">
+            <img src="imagens here/guitarra.jpg" alt="OG Vermelha">
+                <h2>Guitarra</h2>
+                <a href="guitarra.html" class="botao-comprar">Saber Mais</a>
+        </div>
+
+                <div class="card-produto">
+            <img src="imagens here/contrle.jpg" alt="OG Vermelha">
+                <h2>Games</h2>
+                <a href="games.html" class="botao-comprar">Saber Mais</a>
+        </div>
+
+                <div class="card-produto">
+            <img src="imagens here/rubic.jpg" alt="OG Vermelha">
+                <h2>Rubiks Cube</h2>
+                <a href="rubiks.html" class="botao-comprar">Saber Mais</a>
+        </div>
+
+                <div class="card-produto">
+            <img src="imagens here/bike.jpg" alt="OG Vermelha">
+                <h2>Bike</h2>
+                <a href="bike.html" class="botao-comprar">Saber Mais</a>
+        </div>
+
+
+    </div>
+
+    <script src="Auxiliares/main.js"></script>
+    <!-- //-------------------------------Script qualquer de confetis-------------------------------- -->
+
+                    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+                    <script>
+                window.addEventListener('load', function() {
+                confetti({
+                    particleCount: 80,
+                    spread: 60,
+                    origin: { x: 0.25, y: 0.2 }
+                });
+                confetti({
+                    particleCount: 80,
+                    spread: 60,
+                    origin: { x: 0.75, y: 0.2 }
+                });
+                });
+                </script>
+
+    <!-- //------------------------------------------------------------------------------- -->
+
+</body>
+</html>
